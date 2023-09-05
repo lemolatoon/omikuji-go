@@ -6,11 +6,15 @@ import (
 	"strconv"
 
 	"github.com/lemolatoon/core"
+	"github.com/lemolatoon/discord"
 )
 
 func usage() {
 	fmt.Println("Usage: omikuji")
-	fmt.Println("	   try [number of try]")
+	fmt.Println("		try [number of try]	(default: 1)")
+	fmt.Println("			try omikuji [number of try] times. Show the summary of omikuji.")
+	fmt.Println("		discord")
+	fmt.Println("			run discord bot")
 }
 
 func main() {
@@ -21,7 +25,8 @@ func main() {
 	switch os.Args[1] {
 	case "try":
 		try(os.Args[2:])
-
+	case "discord":
+		discord.Run()
 	}
 }
 
